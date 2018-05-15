@@ -68,12 +68,6 @@ def get_activation_units(model, model_inputs, random_sample=None, layer_name=Non
     # Return list of units    
     return [unit for layer_activations in activations for unit in layer_activations]
 
-# -------------------------------------------------------------------------------- #
-# Collect activations of 1200 training images in segments
-# -------------------------------------------------------------------------------- #
-
-# Allow printing of large data structures
-np.set_printoptions(threshold=sys.maxint)
 
 # Get the model
 model = ResNet50(include_top=True, weights='imagenet',
