@@ -42,7 +42,8 @@ num_voxel = {'VC' : 1000,
 
 image_feature_file = 'data/ImageFeatures.h5'
 # features = ['cnn1', 'cnn2', 'cnn3', 'cnn4', 'cnn5', 'cnn6', 'cnn7', 'cnn8']
-features = ['resnet1', 'resnet2', 'resnet3', 'resnet4', 'resnet5', 'resnet6', 'resnet7', 'resnet8']
+# features = ['resnet1', 'resnet2', 'resnet3', 'resnet4', 'resnet5', 'resnet6', 'resnet7', 'resnet8']
+features = ['resnet' + str(i_layer) for i_layer in selected_layers]
 
 # Results settings
 results_dir = os.path.join('results', analysis_name)
