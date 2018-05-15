@@ -153,6 +153,7 @@ print("Loaded units in %.4f seconds" % (time.time() - start_time))
 # 8 ResNet layers recorded
 start_time = time.time()
 for i in range(len(config.selected_layers)):
-    units_file = "resnet" + str(i+1) + ".p"
+    # units_file = "resnet" + str(i+1) + ".p"
+    units_file = "resnet" + str(config.selected_layers[i]) + ".p"
     pickle.dump(units[:, i * 1000:(i+1)*1000], open(units_file, "wb"))
 print("Saved units in %.4f seconds" % (time.time() - start_time))
