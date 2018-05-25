@@ -3,13 +3,13 @@
 
 import os
 
-
 analysis_name = 'GenericObjectDecoding'
 
 # Data settings
 
 # Select only convolutional layers (ignore RELU, BN, etc.)
 selected_layers = [1,23,52,75,101,124,148,175]
+resnet_layer = [1,7,15,22,29,36,43,50]
 units_per_layer = 1000
 
 subjects = {'Subject1' : ['data/Subject1.mat'],
@@ -43,7 +43,12 @@ num_voxel = {'VC' : 1000,
 image_feature_file = 'data/ImageFeatures.h5'
 # features = ['cnn1', 'cnn2', 'cnn3', 'cnn4', 'cnn5', 'cnn6', 'cnn7', 'cnn8']
 # features = ['resnet1', 'resnet2', 'resnet3', 'resnet4', 'resnet5', 'resnet6', 'resnet7', 'resnet8']
-features = ['resnet' + str(i_layer) for i_layer in selected_layers]
+features = ['resnet' + str(index) for index in resnet_layer]
+
+alexnet_features = ['cnn1', 'cnn2', 'cnn3', 'cnn4', 'cnn5', 'cnn6', 'cnn7', 'cnn8']
+resnet_features = ['resnet1', 'resnet2', 'resnet3', 'resnet4', 'resnet5', 'resnet6', 'resnet7', 'resnet8']
+
+resnet_true_layers = ['resnet' + str(index) for index in resnet_layer]
 
 # Results settings
 results_dir = os.path.join('results', analysis_name)
